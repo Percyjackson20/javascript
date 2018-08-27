@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              $('#form').submit(function(e){
+                  e.preventDefault();
+                  var username=$('#Username').val();
+                  var emailid=$('#emailid').val();
+                  var password=$('#password').val();
+                  var cpassword=$('#cpassword').val();
+                  if(username.length<1)
+                      {
+                          $('#username').after('<span>* is required</span>').css("border-color","#006622");
+                      }
+                  if(username.length>1)
+                      {
+                      var x=/^([a-zA-Z]{3,16})$/;
+                      var valid=x.test(username);
+                      if(!valid)
+                          {
+                          alert("Username should contain only a-z characters");
+                          }
+                      }
+                  if(emailid.length<1)
+                      {
+                          $('#emailid').after('<span>* is required</span>').css("border-color","#006622");
+                      }
+                  if(password.length<8)
+                      {
+                              alert("password should in minimum 8 characters");
+                      }
+                  if(cpassword.length<1)
+                      {
+                          $('#cpassword').after('<span>* is required</span>').css("border-color","#006622");
+                      }
+                  if(password.length>=8)
+                      {
+                  if(password!=cpassword)
+                      {
+                          alert("password doesn't match");
+                      }
+                      }
+                  var m=document.getElementById("male").checked;
+                  var f=document.getElementById("female").checked;
+                  if(m!=true&&f!=true)
+                      {
+                      alert("Choose Your Gender");
+                      }
+              });
+            });
+        </script>
+        <style>
+.form
+{
+color:white;
+background-color: rgba(0,0,0,0.5);
+width:400px;
+height: 700px;
+margin-top: 80px;
+margin-left: 450px;
+padding-top: 60px;
+padding-left: 100px;
+border-radius: 5px;
+}
+.form input[type="text"]
+{
+border-radius: 5px;
+color:#006622;
+height:30px;
+width:290px;
+font-size:18px;
+font-weight: bolder;
+font-family: fantasy;
+}
+.form input[type="email"]
+{
+border-radius: 5px;
+color:#006622;
+height:30px;
+width:290px;
+font-size:18px;
+font-weight: bolder;
+font-family: fantasy;
+}            
+.p
+{
+font-weight: bolder;
+font-size: 20px;
+font-family: fantasy;
+}
+.form input[type="password"]
+{
+border-radius: 5px;
+color:#006622;
+height:30px;
+width:290px;
+font-size:18px;
+font-weight: bolder;
+font-family: fantasy;
+}
+.form input[type="submit"]
+{
+height:40px;
+width:80px;
+border-radius: 5px;
+background-color: #006622; 
+color:#f2f2f2;
+font-weight: bolder;
+font-size: 17px;
+font-family: fantasy;
+border-color: white;
+border-style: dashed;
+margin-left: 200px;
+}
+.form input[type="submit"]:hover
+{
+background-color: white;
+color: black;
+}
+.body
+    {
+    background-color: #0d0d0d;
+    }
+            
+        </style>
+    </head>
+    <body class="body">
+        <form  id="form" class="form">
+            <p class="p">Username</p>
+            <input type="text" placeholder="Username" id="Username">
+            <p class="p">EmailId</p>
+            <input type="email" placeholder="Example@gmail.com" id="emailid">
+            <p class="p">password</p>
+            <input type="password" placeholder="Password" id="password">
+            <p class="p">confirmpassword</p>
+            <input type="password" placeholder="Confirm Password" id="cpassword">
+            <p class="p">Gender</p>
+            <div class="p" id="select">
+            <input name="gender" type="radio" id="male">Male<input name="gender" type="radio" id="female">Female
+            </div>
+            <p class="p">Country</p>
+            <input name="gender" list="country" type="text">
+            <datalist id="country">
+            <option id="1">INDIA</option>
+            <option id="2">USA</option>
+            <option id="3">UK</option>
+            </datalist>
+            <br>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

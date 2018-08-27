@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<style>
+#draggable{width: 100px;height: 100px;padding: 0.5em;background: #ccc;}
+#draggable1{width: 100px;height: 100px;padding: 0.5em;background: #ccc;}
+#droppable{width: 200px;height: 200px;margin-left: 200px;top: 0; background: #000;color: aqua;position: absolute;}
+</style>
+<script>
+    $(document).ready(function(){
+       $("#draggable").draggable({revert:true});
+        $("#draggable1").draggable({revert:true});
+        $("#droppable").droppable({
+        drop:function(event,ui)
+            {
+                $(this).html(ui.draggable.text());
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    <div id="draggable" class="ui-widget-content">
+        <p>Dragging</p>
+    </div>
+    <div id="draggable1" class="ui-widget-content">
+        <p>Successfull</p>
+    </div>
+    <div id="droppable" class="droppable">
+        <p>Droping</p>
+    </div>
+</body>
+</html>

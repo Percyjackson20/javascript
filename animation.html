@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#b1").click(function()
+{
+var d1=$("#1");
+d1.animate({bottom:'400px'});
+d1.animate({height:'100px'});
+d1.animate({width:'400px'});
+});
+$("#b2").click(function()
+{
+var d2=$("#2");
+d2.animate({bottom:'300px'});
+d2.animate({height:'100px'});
+d2.animate({width:'400px'});
+});
+$("#b3").click(function()
+{
+var d3=$("#3");
+d3.animate({bottom:'200px'});
+d3.animate({height:'100px'});
+d3.animate({width:'400px'});
+});
+});
+</script>
+</head>
+<body>
+<button id="b1">first</button>
+<div style="background:#ff751a;height:100px;width:100px;position:absolute;" id="1"></div>
+<button id="b2">second</button>
+<div style="background:#ffffff;height:100px;width:100px;position:absolute;" id="2"></div>
+<button id="b3">three</button>
+<div style="background:#00b33c;height:100px;width:100px;position:absolute;" id="3"></div>  
+</body>
+</html>

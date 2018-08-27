@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>WebPage1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      $("#b1").click(function()
+      { 
+          var d1=$("h1").text();
+          document.getElementById("p").innerHTML=$("h1").html();
+      });
+      $("#b2").click(function()
+      {
+         var d2=$("#p1");
+         var d3=$("h2").text();
+         d2.animate({bottom:'200px'},"slow");
+         d2.animate({left:'200px'},"slow");
+         d2.append(d3);
+         d2.animate({top:'200px'},"slow");
+      });
+      });
+    </script>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <h2>Boss</h2>
+    <input type="button" id="b1" value="Submit">
+    <input type="button" id="b2" value="click">
+    <div id="p1" style="background:#ff751a;height:100px;width:100px;position: absolute;">
+    <p id="p"></p>
+    </div>
+</body>
+</html>

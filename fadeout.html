@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#1").click(function(){
+        $("#4").fadeOut(100);
+        $("#3").fadeOut(500);
+        $("#2").fadeOut(1000); 
+    });
+     $("#2").click(function(){
+       $("#4").fadeOut(100);
+        $("#3").fadeOut(500);
+        $("#1").fadeOut(1000); 
+    });
+     $("#3").click(function(){
+        $("#4").fadeOut(100);
+        $("#2").fadeOut(500);
+        $("#1").fadeOut(1000); 
+    });
+     $("#4").click(function(){
+       $("#3").fadeOut(100);
+        $("#2").fadeOut(500);
+        $("#1").fadeOut(1000); 
+    });
+});
+</script>
+</head>
+<body>
+
+<button id="1">1</button>
+<button id="2">2</button>
+<button id="3">3</button>
+<button id="4">4</button>
+</body>
+</html>
